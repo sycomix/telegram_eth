@@ -12,10 +12,8 @@
     "cheerio": "^1.0.0-rc.2",
     "colors": "^1.1.2",
     "needle": "^1.6.0",
-    "nightmare": "^2.10.0",
     "node-fetch": "^1.7.1",
     "telegraf": "^3.8.2",
-    "tonal": "^0.69.7",
     "yarn": "^0.27.5"
   }
 }
