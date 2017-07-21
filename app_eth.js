@@ -21,13 +21,13 @@ function getEth() {
 		.then(json => {
 
 
-			needle.get("https://coinmarketcap.com/exchanges/poloniex/", (error, response) => {
+			needle.get("https://coinmarketcap.com/currencies/ethereum/#markets", (error, response) => {
 				if (!error && response.statusCode == 200)
 					$ = cheerio.load(response.body);
 
 
 				let globalEth = +json[0]["price_usd"];
-				let poloniexEth = +$(".text-right.price").html().slice(1);
+				let poloniexEth = +$(".price")[3].attribs["data-usd"];
 				if (currentEth_usd - numMax > poloniexEth) {
 					console.log("\x07", new Date(), "ETH_USD - : ".red, currentEth_usd, poloniexEth);
 					bot.telegram.sendMessage(myChat, `$ETH_USDT - : ${currentEth_usd}  ${poloniexEth}`);
